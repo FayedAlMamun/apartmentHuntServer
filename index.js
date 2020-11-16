@@ -48,6 +48,9 @@ client.connect(err => {
         res.send(document)
       })
   })
+  app.get('/', (req, res) => {
+    res.send('Welcome!')
+   })
   app.get('/rents/:id', (req, res) => {
     const id = req.params.id;
     apartmentsCollection.find({ _id: ObjectID(id) })
